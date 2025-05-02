@@ -45,16 +45,20 @@ Results = []
 for name, value in Values.items():
   if value > Thresholds[name]:
     Fail += 1
-    Results.append(bold+italic+red + f"{name} failed: {value:.4f} (threshold = {Thresholds[name]})"+end)
+    Results.append(bold+italic+red + f"{name} failed: \n{name} = {value:.4f}   \nThreshold = {Thresholds[name]}"+end)
   else:
     Pass += 1
-    Results.append(bold+italic+green + f"{name} passed: {value:.4f} (threshold = {Thresholds[name]})"+end)
+    Results.append(bold+italic+green + f"{name} passed: \n{name} = {value:.4f}   \nThreshold = {Thresholds[name]}"+end)
 
 # Final Output
-if Pass == 4:
-  print(bold+italic+green+"All values passed"+end)
+if Pass == 4: 
+ print(bold+italic+green+"All values passed"+end)
+ for Result in Results:
+   print(Result)
 elif Fail == 4:
   print(bold+italic+red+"All values failed"+end)
-else:
-  for result in Results:
-    print(result)
+  for Result in Results:
+   print(Result)
+else: 
+  for Results in Results:
+    print(Results)
