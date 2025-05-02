@@ -57,8 +57,12 @@ value_check_2("H", H, 0.051)
 # Summary of Results
 if Pass == 4: 
  print(bold+italic+green+"All values passed"+end)
+ for Result in Results:
+   print(Result)
 elif Fail == 4:
   print(bold+italic+red+"All values failed"+end)
+  for Result in Results:
+   print(Result)
 else: 
-  for result in Results:
-    print(result)
+  for Results in Results:
+    print(Results)
